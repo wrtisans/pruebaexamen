@@ -1,0 +1,61 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/{lang}/{items?}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista de los repositorios mas populares por lenguaje'
+      description: 'Te permite listar los repositorios mas populares por lenguaje basados en los parametros proporcionados'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      lang:
+        name: lang
+        description: 'Valor que indica el lenguaje a buscar.'
+        required: true
+        example: JavaScript
+        type: string
+        custom: []
+      items:
+        name: items
+        description: 'Valor que indica la cantidad de elementos a tomar en la busqueda.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      lang: JavaScript
+      items: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":"Se han encontrado resultados","data":{"0":{"rank":"1","item":"top-100-stars","repo_name":"freeCodeCamp","stars":"297277","forks":"20885","language":"JavaScript","repo_url":"https:\/\/github.com\/freeCodeCamp\/freeCodeCamp","username":"freeCodeCamp","issues":"4817","last_commit":"2019-02-07T03:56:32Z","description":"The https:\/\/www.freeCodeCamp.org open source codebase and curriculum. Learn to code for free together with millions of people."},"1270":{"rank":"1","item":"JavaScript","repo_name":"freeCodeCamp","stars":"297277","forks":"20885","language":"JavaScript","repo_url":"https:\/\/github.com\/freeCodeCamp\/freeCodeCamp","username":"freeCodeCamp","issues":"4817","last_commit":"2019-02-07T03:56:32Z","description":"The https:\/\/www.freeCodeCamp.org open source codebase and curriculum. Learn to code for free together with millions of people."}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          access-control-allow-origin: 'http://localhost:3000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
