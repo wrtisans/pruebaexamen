@@ -23,7 +23,7 @@ class MainController extends BaseController
             throw_if(empty($lang), 'Se requiere un lenguaje para poder realizar la busqueda.');
             $collection = $this->getCSVData();
             throw_if(!$collection->contains('language', $lang), 'No se encontro ningun resultado para esta busqueda.');
-            return $this->sendResponse($collection->where('language', $lang)->sortBy('rank')->take($items), 'Se han encontrado resultados');
+            return $this->sendResponse($collection->where('language', $lang)->sortByDesc('stars')->take($items), 'Se han encontrado resultados');
         } catch (Throwable $exception) {
             return $this->sendError($exception->getMessage(), [], 409);
         }
